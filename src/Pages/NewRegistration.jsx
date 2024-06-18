@@ -19,17 +19,15 @@ function NewRegistration() {
     }
     const handleStudentAdd = async () => {
         try {
-            console.log(formData);
             await APIHander.post("http://localhost:4001/student", formData);
             setFormData({ name: "", gender: "", address: "" });
             toast.success("Student registered successfully.");
         } catch (error) {
-            if (error.response.data.message) {
-                toast.error(error.response.data.message);
+            if (error?.response?.data?.message) {
+                toast.error(error?.response?.data?.message);
             } else {
                 toast.error("Some error occured.");
             }
-            console.log(error.response.data);
         }
 
     }
