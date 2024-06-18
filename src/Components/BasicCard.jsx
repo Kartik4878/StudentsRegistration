@@ -19,7 +19,6 @@ export default function BasicCard({ title, secondary, least }) {
                 </Typography>
                 <Typography variant="body2">
                     {least}
-
                 </Typography>
             </CardContent>
         </Card>
